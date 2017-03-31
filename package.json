@@ -1,0 +1,26 @@
+{
+  "name": "breact-components",
+  "version": "0.0.1",
+  "description": "Input fields and validation for common brazillian form data",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/conceptu/BReactComponents.git"
+  },
+  "keywords": [
+    "cnpj",
+    "cpf",
+    "input",
+    "validation",
+    "form"
+  ],
+  "author": "Conceptu Protótipos e Sistemas",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/conceptu/BReactComponents/issues"
+  },
+  "homepage": "https://github.com/conceptu/BReactComponents#readme"
+}
