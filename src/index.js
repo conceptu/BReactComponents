@@ -1,5 +1,5 @@
 // Demo component
 // this is only example component
 // you can find tests in __test__ folder
-
-export default from './components/CNPJInput.jsx';
+import CNPJTextField from './components/CNPJInput.jsx';
+export default CNPJTextField; 
