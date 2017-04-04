@@ -22,5 +22,10 @@
   "bugs": {
     "url": "https://github.com/conceptu/BReactComponents/issues"
   },
-  "homepage": "https://github.com/conceptu/BReactComponents#readme"
+  "homepage": "https://github.com/conceptu/BReactComponents#readme",
+  "dependencies": {
+    "material-ui": "^0.17.1",
+    "react": "^15.4.2",
+    "react-text-mask": "^4.1.0"
+  }
 }
