@@ -1,3 +1,1 @@
-exports.returnsA = function() {
-  return "A";
-}
+module.exports = require('./dist/index');
