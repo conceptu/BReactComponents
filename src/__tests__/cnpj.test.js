@@ -1,7 +1,7 @@
 /* eslint-env mocha */
 import { Meteor } from 'meteor/meteor';
 import { chai } from 'meteor/practicalmeteor:chai';
-import isValidCNPJ from './cnpj';
+import isValidCNPJ from '/src/validations/cnpj.js';
 
 if (Meteor.isClient) {
   describe('Company', () => {

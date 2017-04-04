@@ -1,5 +1,10 @@
 {
     "parser": "babel-eslint",
+    "parserOptions": {
+      "ecmaFeatures": {
+        "jsx": true
+      }
+    },
     "env": {
         "browser": true,
         "node": true,
@@ -8,6 +13,10 @@
     "ecmaFeatures": {
         "modules": true
     },
+    "extends": [
+      "airbnb/base",
+      "plugin:react/recommended"
+    ],
     "rules": {
         "no-bitwise": 2,
         "no-else-return": 2,
@@ -17,8 +26,21 @@
         "no-inner-declarations": [2, "both"],
         "no-lonely-if": 2,
         "no-multiple-empty-lines": [2, {"max": 3}],
+        "no-param-reassign": 1,
         "no-self-compare": 2,
-        "no-underscore-dangle": 0,
+        "no-underscore-dangle": [
+        "error",
+            {
+              "allow": [
+                "__",
+                "_id",
+                "_ensureIndex",
+                "_verifyEmailToken",
+                "_resetPasswordToken",
+                "_name"
+              ]
+            }
+        ],
         "no-use-before-define": 0,
         "no-unused-expressions": 0,
         "no-void": 2,
@@ -29,7 +51,12 @@
         "complexity": [1, 12],
         "func-names": 0,
         "guard-for-in": 2,
-        "indent": [2, 4],
+        "import/no-absolute-path": 1,
+        "import/no-unresolved": 0,
+        "import/no-extraneous-dependencies": 0,
+        "import/extensions": 0,
+      "class-methods-use-this": 0
+        "indent": [2, 2],
         "max-len": [0, 120, 4],
         "new-cap": [2, {"newIsCap": true, "capIsNew": false}],
         "quotes": [2, "single"],
