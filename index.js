@@ -1,3 +1,3 @@
-export default function returnsA() {
+exports.returnsA = function() {
   return "A";
 }
