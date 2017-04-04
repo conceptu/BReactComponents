@@ -7,7 +7,7 @@ import isValidCNPJ from '/src/validations/cnpj.js';
 import { defaultNonEditingStyle } from '/src/styles/styles.js';
 import i18n from 'meteor/universe:i18n';
 
-export default class CNPJTextField extends React.Component  {
+export class CNPJTextField extends React.Component  {
 
   constructor(props) {
     super(props);
@@ -62,5 +62,4 @@ export default class CNPJTextField extends React.Component  {
       );
     }
   }
-
 }
