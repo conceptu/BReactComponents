@@ -4,7 +4,7 @@ import Divider from 'material-ui/Divider';
 import ref from "/imports/lib/component_ref";
 import { MaskedInput } from 'react-text-mask';
 import isValidCNPJ from '/src/validations/cnpj.js';
-import { defaultNonEditingStyle } from '/src/styles/styles.js';
+import nonEditingStyle from '/src/styles/styles.js';
 import i18n from 'meteor/universe:i18n';
 
 export class CNPJTextField extends React.Component  {
