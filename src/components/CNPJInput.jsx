@@ -1,11 +1,9 @@
 import React, { PropTypes } from 'react';
 import TextField from 'material-ui/TextField';
 import Divider from 'material-ui/Divider';
-import ref from "/imports/lib/component_ref";
 import { MaskedInput } from 'react-text-mask';
-import isValidCNPJ from '/src/validations/cnpj.js';
-import nonEditingStyle from '/src/styles/styles.js';
-import i18n from 'meteor/universe:i18n';
+import isValidCNPJ from '../validations/cnpj.js';
+import nonEditingStyle from '../styles/styles.js';
 
 export class CNPJTextField extends React.Component  {
 
@@ -14,6 +12,10 @@ export class CNPJTextField extends React.Component  {
     this.state = {
       value: props.value,
     };
+    const { parent, refName } = props;
+    if (parent && refName) {
+      parent[refName] = this;
+    }
   }
 
   handleChange(event) {
@@ -37,11 +39,6 @@ export class CNPJTextField extends React.Component  {
           hintText={placeholder} 
           floatingLabelText={placeholder} 
           name='cnpjInput'
-          ref={(c) => {
-            if (c && c.input && c.input.inputElement && parent && refName) {
-              parent[refName] = c.input.inputElement;
-              
-            }}}
           errorText={this.state.hasCNPJError ? errorMessage : null} >
             <MaskedInput 
               guide={false}
