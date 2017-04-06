@@ -32,6 +32,7 @@
     "test": "npm run lint && npm run testonly",
     "test-watch": "npm run testonly -- --watch --watch-extensions js"
   },
+  "main":"./dist",
   "devDependencies": {
     "babel-cli": "^6.6.4",
     "babel-core": "^6.7.4",

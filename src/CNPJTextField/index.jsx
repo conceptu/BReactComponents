@@ -3,9 +3,9 @@ import TextField from 'material-ui/TextField';
 import Divider from 'material-ui/Divider';
 import { MaskedInput } from 'react-text-mask';
 import isValidCNPJ from '../validations/cnpj.js';
-import nonEditingStyle from '../styles/styles.js';
+import { nonEditingStyle } from '../styles/styles.js';
 
-export class CNPJTextField extends React.Component  {
+export default class CNPJTextField extends React.Component  {
 
   constructor(props) {
     super(props);
@@ -16,6 +16,7 @@ export class CNPJTextField extends React.Component  {
     if (parent && refName) {
       parent[refName] = this;
     }
+    this.handleChange = this.handleChange.bind(this);
   }
 
   handleChange(event) {
@@ -51,7 +52,7 @@ export class CNPJTextField extends React.Component  {
     } else {
       return (
         <div>
-          <div style={defaultNonEditingStyle}>
+          <div style={nonEditingStyle}>
             {this.state.value}
           </div>
           <Divider />
