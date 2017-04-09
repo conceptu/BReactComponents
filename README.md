@@ -41,6 +41,4 @@ return (
 );
 // And on some other method in 'parent'
 const cep = this.myCEPTextField.getValue();
-// 
 ```
-
