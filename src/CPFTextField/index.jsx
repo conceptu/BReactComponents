@@ -15,8 +15,7 @@ export default class CPFTextField extends RootMaskedTextField  {
   }
 
   handleChange(event) {
-    const newValue = event.target.value;
-    this.setState({value: newValue});
+    const newValue = super.handleChange(event);
     if (newValue.length == 14) {
       this.setState({hasError: !isValidCPF(newValue)});
     }

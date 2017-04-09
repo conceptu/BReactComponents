@@ -15,10 +15,10 @@ export default class CNPJTextField extends RootMaskedTextField  {
   }
 
   handleChange(event) {
-    const newValue = event.target.value;
-    this.setState({value: newValue});
+    const newValue = super.handleChange(event);
     if (newValue.length == 18) {
       this.setState({hasError: !isValidCNPJ(newValue)});
     }
+    return newValue;
   }
 }
