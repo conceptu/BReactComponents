@@ -4,13 +4,13 @@ import Divider from 'material-ui/Divider';
 import { MaskedInput } from 'react-text-mask';
 import isValidCNPJ from '../validations/cnpj.js';
 import { nonEditingStyle } from '../styles/styles.js';
-import RootMaskedTextField from './RootMaskedTextField';
+import RootMaskedTextField from '../RootMaskedTextField';
 
-export default class CNPJTextField extends RootTextField  {
+export default class CNPJTextField extends RootMaskedTextField  {
 
   constructor(props) {
     super(props);
-    this.mask = [/[1-9]/,/\d/,'.',/\d/,/\d/,/\d/,'.',/\d/,/\d/,/\d/, '/', /\d/, /\d/, /\d/,/\d/,'-',/\d/,/\d/];
+    this.mask = [/[0-9]/,/\d/,'.',/\d/,/\d/,/\d/,'.',/\d/,/\d/,/\d/, '/', /\d/, /\d/, /\d/,/\d/,'-',/\d/,/\d/];
     this.handleChange = this.handleChange.bind(this);
   }
 

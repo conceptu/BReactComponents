@@ -4,9 +4,9 @@ import Divider from 'material-ui/Divider';
 import { MaskedInput } from 'react-text-mask';
 import isValidCNPJ from '../validations/cnpj.js';
 import { nonEditingStyle } from '../styles/styles.js';
-import RootMaskedTextField from './RootMaskedTextField';
+import RootMaskedTextField from '../RootMaskedTextField';
 
-export default class CEPTextField extends RootTextField  {
+export default class CEPTextField extends RootMaskedTextField  {
 
   constructor(props) {
     super(props);

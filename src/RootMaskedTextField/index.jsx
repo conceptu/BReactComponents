@@ -3,7 +3,6 @@ import TextField from 'material-ui/TextField';
 import Divider from 'material-ui/Divider';
 import { MaskedInput } from 'react-text-mask';
 import { nonEditingStyle } from '../styles/styles.js';
-import RootTextField from './RootMaskedTextField';
 
 export default class RootMaskedTextField extends React.Component  {
 
