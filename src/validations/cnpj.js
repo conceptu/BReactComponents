@@ -1,47 +1,43 @@
-/* eslint-disable */
+import removeMask from './removeMask';
 
 export default function isValidCNPJ(value) {
-  if (!value) return false;
-  const cnpj = value.replace(/[^\d]+/g, '');
-  if (cnpj === '') return false;
-  if (cnpj.length !== 14) return false;
-
-  // Known invalid cnpjs
-  if (isKnownInvalid(cnpj)) {
+  const cnpj = removeMask(value);
+  if (!cnpj || cnpj.length !== 14 || isKnownInvalid(cnpj)) {
     return false;
   }
-
   let size = cnpj.length - 2;
   let numbers = cnpj.substring(0, size);
   const validationDigits = cnpj.substring(size);
   let sum = 0;
   let currentPosition = size - 7;
   for (let i = size; i >= 1; i -= 1) {
-    sum += numbers.charAt(size - i) * currentPosition--;
+    sum += numbers.charAt(size - i) * currentPosition;
+    currentPosition -= 1;
     if (currentPosition < 2) {
       currentPosition = 9;
     }
   }
-  let result = sum % 11 < 2 ? 0 : 11 - sum % 11;
-  if (result != validationDigits.charAt(0)) {
+  let result = sum % 11 < 2 ? 0 : 11 - (sum % 11);
+  if (result !== validationDigits.charAt(0)) {
     return false;
   }
-
   size += 1;
   numbers = cnpj.substring(0, size);
   sum = 0;
   currentPosition = size - 7;
-  for (let i = size; i >= 1; i--) {
-    sum += numbers.charAt(size - i) * currentPosition--;
+  for (let i = size; i >= 1; i -= 1) {
+    sum += numbers.charAt(size - i) * currentPosition;
+    currentPosition -= 1;
     if (currentPosition < 2) {
       currentPosition = 9;
     }
   }
-  result = sum % 11 < 2 ? 0 : 11 - sum % 11;
-  return result == validationDigits.charAt(1);
+  result = sum % 11 < 2 ? 0 : 11 - (sum % 11);
+  return result === validationDigits.charAt(1);
 }
 
 function isKnownInvalid(value) {
+  // Known invalid cnpjs
   return value === '00000000000000' ||
     value === '11111111111111' ||
     value === '22222222222222' ||
