@@ -17,8 +17,6 @@ export default class RootMaskedTextField extends React.Component  {
 
   handleChange(event) {
     let newValue = event.target.value;
-    console.log(this.state.value);
-    console.log(newValue);
     this.setState({value:newValue});
     return newValue;
   }
