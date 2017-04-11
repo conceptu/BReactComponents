@@ -10,6 +10,7 @@ export default class CPFTextField extends RootMaskedTextField  {
 
   constructor(props) {
     super(props);
+    this.inputName = 'CPFTextField';
     this.mask = [/[0-9]/,/\d/,/\d/,'.',/\d/,/\d/,/\d/,'.',/\d/,/\d/,/\d/,'-',/\d/,/\d/];
     this.handleChange = this.handleChange.bind(this);
   }

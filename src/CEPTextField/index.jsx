@@ -10,6 +10,7 @@ export default class CEPTextField extends RootMaskedTextField  {
 
   constructor(props) {
     super(props);
+    this.inputName = 'CEPTextField';
     this.mask = [/[1-9]/, /\d/, /\d/, /\d/,/\d/,'-',/\d/,/\d/,/\d/];
   }
 

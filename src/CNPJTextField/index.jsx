@@ -10,6 +10,7 @@ export default class CNPJTextField extends RootMaskedTextField  {
 
   constructor(props) {
     super(props);
+    this.inputName = 'CNPJTextField';
     this.mask = [/[0-9]/,/\d/,'.',/\d/,/\d/,/\d/,'.',/\d/,/\d/,/\d/, '/', /\d/, /\d/, /\d/,/\d/,'-',/\d/,/\d/];
     this.handleChange = this.handleChange.bind(this);
   }

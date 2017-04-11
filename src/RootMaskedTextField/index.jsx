@@ -3,6 +3,7 @@ import TextField from 'material-ui/TextField';
 import Divider from 'material-ui/Divider';
 import { MaskedInput } from 'react-text-mask';
 import { nonEditingStyle } from '../styles/styles.js';
+import removeMask from '../validations/removeMask.js';
 
 export default class RootMaskedTextField extends React.Component  {
 
@@ -11,32 +12,30 @@ export default class RootMaskedTextField extends React.Component  {
     this.state = {
       value: props.value,
     };
-    const { parent, refName } = props;
-    if (parent && refName) {
-      parent[refName] = this;
-    }
     this.handleChange = this.handleChange.bind(this);
   }
 
   handleChange(event) {
     let newValue = event.target.value;
+    console.log(this.state.value);
+    console.log(newValue);
     this.setState({value:newValue});
     return newValue;
   }
 
   getValue() {
-    return this.state.value;
+    return removeMask(this.state.value);
   }
 
   render() {
-    const { placeholder, refName, errorMessage } = this.props;
+    const { placeholder, errorMessage } = this.props;
     if (this.props.editing) {
       return (
         <TextField 
           fullWidth
           hintText={placeholder} 
           floatingLabelText={placeholder} 
-          name={refName}
+          name={this.inputName}
           errorText={this.state.hasError ? errorMessage : null} >
             <MaskedInput 
               guide={false}
