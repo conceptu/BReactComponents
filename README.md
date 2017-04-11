@@ -24,21 +24,4 @@ import { CPFTextField, CNPJTextField, CEPTextField } from 'breact-components';
 * `editing: boolean` Whether you want to allow the value to be edited or to simply display it.
 * `placeholder: String(Optional)` Placeholder/tip to help the user.
 * `errorMessage: String(Optional)` On validated fields (CPF and CNPJ), the message that will be shown in case validation fails.
-* `getValue(): String` Returns the current value of the TextField, including the mask.
-* `parent : Object(Optional)` See below.
-* `refName : String(Optional)` See below.
-
-#### About parent & refName
-These properties are used together to make it easier for you to access your TextField. Instead going through all that react-DOM shenanigans simply type:
-```javascript
-// On your render method
-return (
-  <div>
-    // Other form fields...
-    <CEPTextField value={value} editing={true} placeholder={placeholder} parent={this} refName='myCEPTextField' />
-    // Other form fields...
-  </div>
-);
-// And on some other method in 'parent'
-const cep = this.myCEPTextField.getValue();
-```
+* `getValue(): String` Returns the current value of the TextField, without the mask.
