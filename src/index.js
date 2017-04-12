@@ -1,6 +1,6 @@
 import CNPJTextField from './CNPJTextField';
 import CPFTextField from './CPFTextField';
-import CEPTextField from './CEPTextfield';
+import CEPTextField from './CEPTextField';
 
 import isValidCPF from './validations/cpf';
 import isValidCNPJ from './validations/cnpj';
