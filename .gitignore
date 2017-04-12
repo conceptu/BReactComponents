@@ -24,6 +24,10 @@
 # Icon must end with two \r
 Icon
 
+#Webstorm metadata
+.idea
+
+#VSCode metadata
 
 # Thumbnails
 ._*
