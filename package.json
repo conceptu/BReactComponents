@@ -35,7 +35,7 @@
   "main": "./dist",
   "devDependencies": {
     "babel-cli": "6.6.4",
-    "babel-core": "6.7.4",
+    "babel-core": "6.10.4",
     "babel-eslint": "6.0.2",
     "babel-plugin-transform-es2015-modules-umd": "6.24.1",
     "babel-polyfill": "6.7.4",
