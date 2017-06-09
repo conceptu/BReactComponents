@@ -1,11 +1,11 @@
-import React, { PropTypes } from 'react';
+import React, { Component } from 'react';
 import TextField from 'material-ui/TextField';
 import Divider from 'material-ui/Divider';
 import { MaskedInput } from 'react-text-mask';
 import { nonEditingStyle } from '../styles/styles.js';
 import removeMask from '../validations/removeMask.js';
 
-export default class RootMaskedTextField extends React.Component  {
+export default class RootMaskedTextField extends Component  {
 
   constructor(props) {
     super(props);
@@ -17,6 +17,11 @@ export default class RootMaskedTextField extends React.Component  {
 
   handleChange(event) {
     let newValue = event.target.value;
+    const oldValue = this.state.value;
+    if (removeMask(oldValue) === removeMask(newValue) // If the unmasked value is the same as the old value, 
+      && newValue.length !== this.mask.length) {      // and this is not the last characte,
+        newValue = newValue.slice(0,- 1);             // we're trying to erase a mask element, since it'll just be readded, we must erase the previous character as well
+    }
     this.setState({value:newValue});
     return newValue;
   }
@@ -29,13 +34,13 @@ export default class RootMaskedTextField extends React.Component  {
     const { placeholder, errorMessage } = this.props;
     if (this.props.editing) {
       return (
-        <TextField 
+        <TextField
           fullWidth
-          hintText={placeholder} 
-          floatingLabelText={placeholder} 
+          hintText={placeholder}
+          floatingLabelText={placeholder}
           name={this.inputName}
           errorText={this.state.hasError ? errorMessage : null} >
-            <MaskedInput 
+            <MaskedInput
               guide={false}
               mask={this.mask}
               value={this.state.value}
